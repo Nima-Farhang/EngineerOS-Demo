@@ -1,0 +1,30 @@
+# Secrets and local configuration
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+secrets/
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Generated/local outputs
+.tmp/
+build/
+dist/
+coverage/
+
+# Never import workplace source material
+private-source/
+internal-reference/
+*.eml
+*.msg

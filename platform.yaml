@@ -1,0 +1,61 @@
+schema_version: "1.0"
+
+platform:
+  id: ai-engineering-workstation
+  name: AI Engineering Workstation
+  version: "0.1.0"
+  status: starter
+  purpose: >
+    A public demonstration of an evidence-led, human-controlled workflow for
+    using coding agents to understand a codebase, design a change, create
+    ticket-local proposals, generate validation, review the work, and prepare
+    manual release guidance.
+  principles:
+    - evidence_before_inference
+    - design_before_development
+    - human_approval_at_material_checkpoints
+    - project_source_read_only_by_default
+    - ticket_local_proposed_changes
+    - generated_tests_are_not_execution_evidence
+    - no_secrets_or_private_source_material
+
+boundaries:
+  environment_connections: false
+  prohibited:
+    - deploy_code
+    - modify_external_project_source_without_human_instruction
+    - store_credentials
+    - claim_unexecuted_tests_passed
+    - manufacture_approval_or_evidence
+    - copy_employer_or_client_material
+
+paths:
+  platform_rules: platform/operating-rules.md
+  workflow: workflows/ticket-development.md
+  workspaces_root: workspaces
+
+workspace:
+  id: commerce-risk
+  name: Commerce Risk Monitoring
+  path: workspaces/commerce-risk
+  project_code_reference:
+    manifest_path: workspaces/commerce-risk/project-code/SOURCE-MANIFEST.yaml
+    access_mode: read_only_by_default
+
+source_hierarchy:
+  - project_code
+  - approved_ticket_requirements
+  - official_project_documentation
+  - curated_workspace_knowledge
+  - completed_ticket_examples
+  - generated_reference_material
+  - general_engineering_knowledge
+
+human_controls:
+  required_for:
+    - requirement_confirmation
+    - design_approval
+    - applying_proposed_changes
+    - executing_tests
+    - release_and_rollback_decisions
+    - source_control_actions
