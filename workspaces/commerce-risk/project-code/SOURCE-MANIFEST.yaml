@@ -1,0 +1,7 @@
+schema_version: "1.0"
+source:
+  mode: repository_local_sample
+  path: workspaces/commerce-risk/project-code/sample-project
+  path_base: repository_root
+  access_mode: read_only_by_default
+  synthetic: true
