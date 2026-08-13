@@ -1,7 +1,7 @@
 schema_version: "1.0"
 source:
   mode: repository_sibling_project
-  path: Projects-Codes/commerce-risk
+  path: Sample-Projects/commerce-risk
   path_base: repository_root
   access_mode: read_only_by_default
   synthetic: true

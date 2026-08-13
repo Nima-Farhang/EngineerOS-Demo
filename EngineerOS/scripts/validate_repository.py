@@ -9,12 +9,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 REQUIRED = [
     "README.md",
-    "EngineerOs/AGENTS.md",
-    "EngineerOs/platform.yaml",
-    "EngineerOs/platform/operating-rules.md",
-    "EngineerOs/WORKFLOW.md",
-    "EngineerOs/workspaces/commerce-risk/instructions.md",
-    "Projects-Codes/commerce-risk/README.md",
+    "EngineerOS/AGENTS.md",
+    "EngineerOS/platform.yaml",
+    "EngineerOS/platform/operating-rules.md",
+    "EngineerOS/WORKFLOW.md",
+    "EngineerOS/workspaces/commerce-risk/instructions.md",
+    "Sample-Projects/commerce-risk/README.md",
 ]
 
 # Generic patterns only: do not embed organization-specific names in this
