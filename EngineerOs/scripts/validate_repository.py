@@ -6,22 +6,23 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 REQUIRED = [
     "README.md",
-    "AGENTS.md",
-    "platform.yaml",
-    "platform/operating-rules.md",
-    "WORKFLOW.md",
-    "workspaces/commerce-risk/instructions.md",
+    "EngineerOs/AGENTS.md",
+    "EngineerOs/platform.yaml",
+    "EngineerOs/platform/operating-rules.md",
+    "EngineerOs/WORKFLOW.md",
+    "EngineerOs/workspaces/commerce-risk/instructions.md",
+    "Projects-Codes/commerce-risk/README.md",
 ]
 
-# Extend locally before publishing if additional prohibited terms are known.
+# Generic patterns only: do not embed organization-specific names in this
+# public demonstration repository.
 PROHIBITED_PATTERNS = [
-    re.compile("@" + "sky" + "city", re.I),
-    re.compile(r"dev\.azure\.com", re.I),
-    re.compile(r"visualstudio\.com", re.I),
-    re.compile(r"OneDrive\s*-\s*" + "Sky" + "City", re.I),
+    re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----", re.I),
+    re.compile(r"(?:password|passwd|api[_-]?key|secret|token)\s*[:=]\s*['\"][^'\"]+['\"]", re.I),
+    re.compile(r"https?://(?:localhost|127\.0\.0\.1)(?::\d+)?/[^\s)]*", re.I),
 ]
 TEXT_SUFFIXES = {".md", ".yaml", ".yml", ".sql", ".py", ".json", ".txt"}
 

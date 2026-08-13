@@ -15,9 +15,14 @@ The repository shows how a coding agent can:
 
 ## Current status
 
-This is the minimum starter repository. Follow [`WORKFLOW.md`](WORKFLOW.md) to
+This is the minimum starter repository. Follow
+[`EngineerOs/WORKFLOW.md`](EngineerOs/WORKFLOW.md) to
 have Codex build the synthetic sample project, documentation, completed demo
 ticket, validation tooling, and final portfolio presentation.
+
+EngineerOS lives under `EngineerOs/`. Authoritative project source lives beside
+it under `Projects-Codes/`, allowing multiple projects to be connected to
+separate workspaces without placing project code inside the workstation.
 
 ## Public-safe design
 
@@ -27,8 +32,8 @@ must be fictional. Do not import or lightly rename employer or client material.
 ## Start
 
 ```bash
-python scripts/validate_repository.py
+python EngineerOs/scripts/validate_repository.py
 ```
 
-Then run the prompts in `WORKFLOW.md` sequentially, reviewing and committing the
-result after each stage.
+Then run the prompts in `EngineerOs/WORKFLOW.md` sequentially, reviewing and
+committing the result after each stage.

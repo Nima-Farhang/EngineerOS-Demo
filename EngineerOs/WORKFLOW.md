@@ -16,9 +16,11 @@ fictional requirements below.
 ## Prompt 0 — Repository safety and orientation
 
 ```text
-Read README.md, AGENTS.md, platform.yaml, platform/operating-rules.md,
-workflows/ticket-development.md, workspaces/commerce-risk/instructions.md, and
-this WORKFLOW.md.
+Read EngineerOs/AGENTS.md, EngineerOs/platform.yaml,
+EngineerOs/platform/operating-rules.md,
+EngineerOs/workflows/ticket-development.md,
+EngineerOs/workspaces/commerce-risk/instructions.md, the repository README.md,
+and this WORKFLOW.md.
 
 Do not modify files yet.
 
@@ -43,7 +45,7 @@ continuing.
 
 ```text
 Implement only the synthetic sample project under:
-workspaces/commerce-risk/project-code/sample-project
+Projects-Codes/commerce-risk
 
 Read and follow AGENTS.md and the operating rules. Do not modify ticket
 artifacts yet.
@@ -88,7 +90,7 @@ Commit as: `feat: add synthetic commerce risk sample project`.
 
 ```text
 Create concise, manually reviewable documentation under:
-workspaces/commerce-risk/knowledge
+EngineerOs/workspaces/commerce-risk/knowledge
 
 Use the actual synthetic sample-project source as the highest authority. Do not
 invent components that are not implemented. Do not change project code.
@@ -106,7 +108,7 @@ facts, inferences, assumptions, and unresolved questions where applicable.
 Avoid repeating the entire source code. Explain enough for a new engineer or
 coding agent to navigate the project efficiently.
 
-Also update workspaces/commerce-risk/knowledge/README.md with an index and a
+Also update EngineerOs/workspaces/commerce-risk/knowledge/README.md with an index and a
 statement that curated knowledge is secondary to project code.
 
 Run repository validation and report the result.
@@ -120,7 +122,7 @@ Commit as: `docs: add curated commerce risk knowledge`.
 
 ```text
 Create a fictional feature request at:
-workspaces/commerce-risk/tickets/completed/DEMO-001/source/feature-request.md
+EngineerOs/workspaces/commerce-risk/tickets/completed/DEMO-001/source/feature-request.md
 
 Do not implement the feature and do not alter sample-project source.
 
@@ -158,10 +160,10 @@ Commit as: `docs: add fictional DEMO-001 requirement`.
 Work only on Stage 1 — Intake and Understanding for DEMO-001.
 
 Ticket path:
-workspaces/commerce-risk/tickets/completed/DEMO-001
+EngineerOs/workspaces/commerce-risk/tickets/completed/DEMO-001
 
 Requirement source:
-workspaces/commerce-risk/tickets/completed/DEMO-001/source/feature-request.md
+EngineerOs/workspaces/commerce-risk/tickets/completed/DEMO-001/source/feature-request.md
 
 Read the operating rules, workspace instructions, requirement source, project
 manifest, relevant sample-project code, and relevant curated knowledge.
@@ -233,7 +235,7 @@ is absent or does not cover the current design, stop.
 
 Keep authoritative sample-project files unchanged. For every approved change,
 create a proposed file under:
-workspaces/commerce-risk/tickets/completed/DEMO-001/implementation/proposed/<project-relative-path>
+EngineerOs/workspaces/commerce-risk/tickets/completed/DEMO-001/implementation/proposed/<project-relative-path>
 
 Preserve the intended destination hierarchy. Implement only the approved
 scope. Update:
@@ -260,7 +262,7 @@ Work only on Stage 4 — Generate Validation for DEMO-001.
 
 Read the confirmed requirement, approved design, current sample-project source,
 and proposed implementation. Create ticket-local validation under:
-workspaces/commerce-risk/tickets/completed/DEMO-001/tests
+EngineerOs/workspaces/commerce-risk/tickets/completed/DEMO-001/tests
 
 Include:
 - automated unit or integration tests suitable for the proposed destination;
