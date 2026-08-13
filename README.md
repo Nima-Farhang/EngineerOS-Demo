@@ -24,6 +24,8 @@ EngineerOS lives under `EngineerOS/`. Runnable fictional project source lives
 beside it under `Sample-Projects/`, allowing multiple projects to be connected to
 separate workspaces without placing project code inside the workstation.
 
+Repository paths documented by EngineerOS are relative to this repository root.
+
 ## Public-safe design
 
 All systems, data, rules, thresholds, tickets, and people in this repository

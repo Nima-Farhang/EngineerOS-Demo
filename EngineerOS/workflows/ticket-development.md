@@ -9,5 +9,5 @@ Use one stage at a time. Each stage must stop at its human checkpoint.
 5. Independent review
 6. Prepare manual transfer, execution, and rollback guidance
 
-Detailed, reusable prompts for each stage are provided in the root
-`WORKFLOW.md`.
+Detailed, reusable prompts for each stage are provided in
+`EngineerOS/WORKFLOW.md`, relative to the repository root.

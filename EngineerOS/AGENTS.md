@@ -2,9 +2,9 @@
 
 Read these files before making changes:
 
-1. `platform/operating-rules.md`
-2. `workflows/ticket-development.md`
-3. the applicable workspace `instructions.md`
+1. `EngineerOS/platform/operating-rules.md`
+2. `EngineerOS/workflows/ticket-development.md`
+3. the applicable `EngineerOS/workspaces/<workspace>/instructions.md`
 4. the current ticket artifacts
 
 ## Public-demo boundary

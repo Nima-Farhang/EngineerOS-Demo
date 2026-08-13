@@ -30,16 +30,17 @@ boundaries:
     - copy_employer_or_client_material
 
 paths:
-  platform_rules: platform/operating-rules.md
-  workflow: workflows/ticket-development.md
-  workspaces_root: workspaces
+  path_base: repository_root
+  platform_rules: EngineerOS/platform/operating-rules.md
+  workflow: EngineerOS/workflows/ticket-development.md
+  workspaces_root: EngineerOS/workspaces
 
 workspace:
   id: commerce-risk
   name: Commerce Risk Monitoring
-  path: workspaces/commerce-risk
+  path: EngineerOS/workspaces/commerce-risk
   project_code_reference:
-    manifest_path: workspaces/commerce-risk/project-code/SOURCE-MANIFEST.yaml
+    manifest_path: EngineerOS/workspaces/commerce-risk/project-code/SOURCE-MANIFEST.yaml
     access_mode: read_only_by_default
 
 source_hierarchy:

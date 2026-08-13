@@ -20,7 +20,7 @@ Read EngineerOS/AGENTS.md, EngineerOS/platform.yaml,
 EngineerOS/platform/operating-rules.md,
 EngineerOS/workflows/ticket-development.md,
 EngineerOS/workspaces/commerce-risk/instructions.md, the repository README.md,
-and this WORKFLOW.md.
+and EngineerOS/WORKFLOW.md.
 
 Do not modify files yet.
 
@@ -28,7 +28,8 @@ Inspect the current repository and report:
 1. the intended architecture and operating model;
 2. the public-demo confidentiality boundary;
 3. missing components required for a credible portfolio demonstration;
-4. a proposed implementation sequence that follows the stages in WORKFLOW.md;
+4. a proposed implementation sequence that follows the stages in
+   EngineerOS/WORKFLOW.md;
 5. any conflict or ambiguity in the current instructions.
 
 All project names, rules, data, thresholds, people, organisations, and
@@ -47,8 +48,8 @@ continuing.
 Implement only the synthetic sample project under:
 Sample-Projects/commerce-risk
 
-Read and follow AGENTS.md and the operating rules. Do not modify ticket
-artifacts yet.
+Read and follow EngineerOS/AGENTS.md and
+EngineerOS/platform/operating-rules.md. Do not modify ticket artifacts yet.
 
 Create a small, coherent, locally understandable Commerce Risk Monitoring data
 project. Use standard SQL that is easy to read and can run with SQLite where
@@ -424,7 +425,8 @@ Check for:
 - unnecessary personal information in commit metadata.
 
 Run repository validation, sample-project tests, and an available secret scanner
-such as gitleaks if installed. Produce `docs/public-release-audit.md` with:
+such as gitleaks if installed. Produce
+`EngineerOS/docs/public-release-audit.md` with:
 - scope;
 - commands and tools actually run;
 - findings;
