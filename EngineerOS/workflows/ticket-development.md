@@ -9,5 +9,9 @@ Use one stage at a time. Each stage must stop at its human checkpoint.
 5. Independent review
 6. Prepare manual transfer, execution, and rollback guidance
 
-Detailed, reusable prompts for each stage are provided in
+`completed` means these six EngineerOS stages and handoff guidance are complete.
+It does not imply transfer, destination execution, commit, deployment, or
+release. Consult the manifest and evidence for those independent states.
+
+Detailed reusable instructions, including Question Mode, are provided in
 `EngineerOS/WORKFLOW.md`, relative to the repository root.

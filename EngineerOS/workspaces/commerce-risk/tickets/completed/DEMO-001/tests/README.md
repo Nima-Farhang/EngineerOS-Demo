@@ -1,7 +1,8 @@
 # DEMO-001 Human Validation Instructions
 
-These tests are generated for the proposed destination and are currently
-**Not Run**. They import `risk_pipeline` as it will exist after a human-approved
+These tests target the proposed destination. On 2026-08-14 an authorized
+isolated temporary runner reported all eleven passing; human result confirmation
+is pending. They import `risk_pipeline` as it will exist after a human-approved
 manual transfer.
 
 ## Preconditions
@@ -25,6 +26,18 @@ python -m unittest discover -s tests -v
 ```
 
 ## Isolated temporary alternative
+
+The reproducible reviewer command is:
+
+```bash
+python EngineerOS/scripts/validate_ticket_proposal.py DEMO-001
+```
+
+It copies source and proposed files into a temporary directory, runs baseline
+and DEMO-001 tests there, verifies authoritative source hashes, reports actual
+results, and cleans up. It does not transfer the proposal.
+
+The equivalent manual process is described below.
 
 A human may instead create a temporary project tree containing:
 

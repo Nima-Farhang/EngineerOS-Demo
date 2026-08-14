@@ -1,6 +1,7 @@
 # DEMO-001 Validation Matrix
 
-Generated validation status: **Not Run**.
+Generated validation status: **Executed by an authorized isolated temporary
+runner on 2026-08-14: PASS (11 tests); human confirmation pending**.
 
 Test references point to `test_repeat_high_value_orders.py` in this directory.
 
@@ -37,6 +38,6 @@ The build/CLI case is covered by
 
 ## Execution evidence
 
-No test outcome is recorded here. A human must execute the validation and add
-the command, environment, date/time, complete result, and executor to
-`../evidence.md` before any test is described as passed.
+The isolated runner outcome is recorded in `../evidence.md`. It is not manual
+transfer, deployment, shared-environment validation, or production evidence.
+Human confirmation is still required before accepting the result.

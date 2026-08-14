@@ -165,8 +165,9 @@ These are impact observations, not a proposed design.
 - Current implementation facts cited: Met.
 - Dependencies and likely affected areas identified: Met.
 - Evidence classifications and conflicts recorded: Met.
-- Cancellation ambiguity preserved: Met; human decision outstanding.
-- Human confirmation: Pending.
+- Cancellation ambiguity preserved: Met; later resolved by the human decision
+  recorded in `evidence.md`.
+- Human confirmation: Confirmed.
 
 ## Human confirmation
 

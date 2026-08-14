@@ -4,12 +4,11 @@ platform:
   id: ai-engineering-workstation
   name: AI Engineering Workstation
   version: "0.1.0"
-  status: starter
+  status: demonstration
   purpose: >
     A public demonstration of an evidence-led, human-controlled workflow for
-    using coding agents to understand a codebase, design a change, create
-    ticket-local proposals, generate validation, review the work, and prepare
-    manual release guidance.
+    using coding agents in read-only Question Mode and human-controlled Ticket
+    Mode around separately located project repositories.
   principles:
     - evidence_before_inference
     - design_before_development
@@ -32,16 +31,17 @@ boundaries:
 paths:
   path_base: repository_root
   platform_rules: EngineerOS/platform/operating-rules.md
-  workflow: EngineerOS/workflows/ticket-development.md
+  workflow: EngineerOS/WORKFLOW.md
+  ticket_workflow: EngineerOS/workflows/ticket-development.md
   workspaces_root: EngineerOS/workspaces
 
-workspace:
-  id: commerce-risk
-  name: Commerce Risk Monitoring
-  path: EngineerOS/workspaces/commerce-risk
-  project_code_reference:
-    manifest_path: EngineerOS/workspaces/commerce-risk/project-code/SOURCE-MANIFEST.yaml
-    access_mode: read_only_by_default
+workspaces:
+  - id: commerce-risk
+    name: Commerce Risk Monitoring
+    path: EngineerOS/workspaces/commerce-risk
+    project_code_reference:
+      manifest_path: EngineerOS/workspaces/commerce-risk/project-code/SOURCE-MANIFEST.yaml
+      access_mode: read_only_by_default
 
 source_hierarchy:
   - project_code
@@ -57,6 +57,12 @@ human_controls:
     - requirement_confirmation
     - design_approval
     - applying_proposed_changes
-    - executing_tests
+    - authorizing_test_execution
+    - confirming_test_results
     - release_and_rollback_decisions
     - source_control_actions
+
+conventions:
+  workspace_path: EngineerOS/workspaces/<workspace>
+  project_path: Sample-Projects/<project>
+  question_mode_prompt: EngineerOS/prompts/question-mode.md

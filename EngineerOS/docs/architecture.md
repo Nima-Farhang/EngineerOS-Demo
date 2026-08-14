@@ -1,4 +1,28 @@
-# Architecture
+# Architecture and Mental Model
+
+EngineerOS is not merely a ticket template system. It is a persistent
+engineering context and workflow layer around separately located project
+repositories.
+
+| Layer | Meaning |
+|---|---|
+| Platform | **How** AI-assisted engineering is performed: authority, evidence, safety, modes, and checkpoints |
+| Workspace | **What** project/domain context the agent receives: instructions, manifest, knowledge, and tickets |
+| Project Source | **What** the software currently implements; authoritative for current behavior |
+| Ticket | **What change** is being understood, designed, proposed, validated, reviewed, and handed off |
+
+```mermaid
+flowchart TD
+    P[Platform\nHow work is performed]
+    W[Workspace\nProject and domain context]
+    S[Source manifest]
+    C[Project Source\nCurrent implementation]
+    T[Ticket\nProposed change]
+
+    P --> W --> S --> C
+    W --> T
+    C -->|current-state evidence| T
+```
 
 The repository separates four concerns:
 
@@ -65,6 +89,36 @@ the source, proposal, destination, reason, review state, and transfer state.
 Generated validation is also ticket-local. An independent review compares the
 requirement, decisions, design, current source, proposal, tests, manifest, and
 evidence before release guidance can be written.
+
+## Two operating modes
+
+- **Question Mode** is read-only and answers engineering questions from source
+  plus relevant supporting context.
+- **Ticket Mode** moves through understanding, design, proposed development,
+  generated validation, independent review, and handoff guidance with human
+  checkpoints.
+
+## Knowledge accumulation
+
+```mermaid
+flowchart TD
+    C[Project code]
+    K[Human-reviewed knowledge]
+    E[Previous ticket evidence]
+    N[New investigation or ticket]
+    D[New evidence and decisions]
+    R{Human review}
+    U[Retained knowledge update]
+
+    C --> N
+    K --> N
+    E --> N
+    N --> D --> R
+    R -->|accepted reusable context| U --> K
+```
+
+Knowledge does not update itself. A human-reviewed update improves future
+orientation but remains secondary to current project code.
 
 ## Operational boundary
 

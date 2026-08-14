@@ -16,3 +16,21 @@ All paths in these documents are relative to the repository root.
 - [Testing guide](testing-guide.md) — baseline coverage and human-run commands.
 - [Debugging guide](debugging-guide.md) — reproducible inspection steps.
 - [Glossary](glossary.md) — project-specific terms and status values.
+- [Common investigations](common-investigations.md) — evidence routes for
+  recurring questions.
+- [Engineering decisions](engineering-decisions.md) — reusable reviewed
+  workspace decisions.
+
+## Knowledge lifecycle
+
+```text
+project code + curated knowledge + previous ticket evidence
+                         ↓
+          new investigation or ticket
+                         ↓
+        new evidence and human decisions
+                         ↓
+       proposed knowledge update + human review
+```
+
+Knowledge does not update automatically and never overrides project source.

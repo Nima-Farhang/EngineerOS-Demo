@@ -5,7 +5,7 @@
 - Ticket ID: `DEMO-001`
 - Title: Add configurable repeat high-value orders rule
 - Owner: Human owner not assigned
-- Status: Intake — Pending Human Confirmation
+- Status: EngineerOS Workflow Complete — Handoff Ready
 
 ## Requirement sources
 

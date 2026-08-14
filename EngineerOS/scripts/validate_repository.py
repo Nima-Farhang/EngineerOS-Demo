@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Validate repository structure, ticket integrity, links, and public safety."""
+"""Check detectable repository structure, link, and public-safety patterns.
+
+This supplements but cannot replace knowledgeable human clean-room review.
+"""
 from __future__ import annotations
 
 import re
@@ -13,7 +16,11 @@ REQUIRED_REPOSITORY_PATHS = [
     "EngineerOS/platform/operating-rules.md", "EngineerOS/WORKFLOW.md",
     "EngineerOS/workspaces/commerce-risk/instructions.md",
     "EngineerOS/workspaces/commerce-risk/project-code/SOURCE-MANIFEST.yaml",
-    "Sample-Projects/commerce-risk/README.md",
+    "Sample-Projects/commerce-risk/README.md", "LICENSE",
+    "EngineerOS/prompts/question-mode.md",
+    "EngineerOS/docs/question-mode-demo.md",
+    "EngineerOS/scripts/validate_ticket_proposal.py",
+    ".github/workflows/quality-gates.yml",
 ]
 REQUIRED_COMPLETED_TICKET_PATHS = [
     "ticket.md", "task-understanding.md", "design.md", "evidence.md",
@@ -118,8 +125,18 @@ def validate_completed_tickets(errors: list[str]) -> None:
         if evidence.is_file():
             text = evidence.read_text(encoding="utf-8")
             generated = text.partition("## Generated validation")[2].partition("## Executed evidence")[0]
+            executed = text.partition("## Executed evidence")[2]
             for line in generated.splitlines():
-                if line.startswith("|") and "tests/" in line and "Not Run" not in line:
+                executed_isolated = (
+                    "authorized isolated runner" in line
+                    and "validate_ticket_proposal.py" in executed
+                )
+                if (
+                    line.startswith("|")
+                    and "tests/" in line
+                    and "Not Run" not in line
+                    and not executed_isolated
+                ):
                     errors.append(
                         f"Generated test is not marked Not Run in {relative(evidence)}: {line.strip()}"
                     )

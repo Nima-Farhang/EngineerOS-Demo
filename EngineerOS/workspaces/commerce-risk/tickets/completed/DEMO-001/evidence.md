@@ -12,7 +12,7 @@
 | Artifact | Purpose | Execution status |
 |---|---|---|
 | None | Stage 1 does not generate implementation validation | Not Run |
-| `tests/test_repeat_high_value_orders.py` | Automated DEMO-001 positive, negative, boundary, rerun, regional, cancellation, and regression validation | Not Run |
+| `tests/test_repeat_high_value_orders.py` | Automated DEMO-001 positive, negative, boundary, rerun, regional, cancellation, and regression validation | Executed by authorized isolated runner on 2026-08-14: PASS (11 tests); human result confirmation pending |
 | `tests/validation-matrix.md` | Map every acceptance criterion to generated tests and expected results | Not Run |
 | `tests/README.md` | Human execution and evidence-capture instructions | Not Run |
 
@@ -37,8 +37,10 @@ Use `Not Run` until execution is actually recorded.
 | Release/manifest path cross-check | Stage 6 guidance against three manifest entries | Coding agent | 2026-08-14 | Passed: all proposed and destination paths exist and appear in guidance; review statuses ready; transfer statuses not transferred | `release-and-rollback.md`, `implementation/change-manifest.yaml` |
 | `python EngineerOS/scripts/validate_repository.py` | Repository root after Stage 6 guidance | Coding agent | 2026-08-14 | Passed: `Repository validation passed.`; no transfer or feature-test execution performed | `EngineerOS/scripts/validate_repository.py` |
 | Authoritative-source isolation check | `git diff --name-only -- Sample-Projects` after Stage 6 guidance | Coding agent | 2026-08-14 | Passed: no authoritative sample-project paths reported | `Sample-Projects/commerce-risk/` |
+| `python -m unittest discover -s tests -v` | Authoritative baseline project; user-authorized local runner | Coding-agent runner | 2026-08-14 | PASS: 4 tests; human result confirmation pending | `Sample-Projects/commerce-risk/tests/test_pipeline.py` |
+| `python EngineerOS/scripts/validate_ticket_proposal.py DEMO-001` | Temporary project assembled from authoritative source plus manifest-listed proposal and ticket tests | Coding-agent isolated runner | 2026-08-14 | PASS: 4 baseline and 11 DEMO-001 tests; authoritative project modified: No; transfer state: not_transferred; temporary files cleaned | `EngineerOS/scripts/validate_ticket_proposal.py` |
 
 ## Outstanding evidence
 
-- Human execution and confirmation of validation generated in a later stage.
+- Human confirmation of the recorded local and isolated runner results.
 - Human decision whether reviewed proposed files are transferred.

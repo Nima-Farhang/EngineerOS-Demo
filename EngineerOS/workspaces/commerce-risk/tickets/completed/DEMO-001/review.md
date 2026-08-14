@@ -91,9 +91,12 @@ documented in the proposed README and design.
 
 ## Generated versus executed evidence
 
-Evidence consistently labels generated tests `Not Run`. Static AST, repository,
-manifest, link, and source-isolation checks are identified as such. No ticket
-artifact claims feature tests, transfer, deployment, or release succeeded.
+At review time, evidence consistently labelled generated tests `Not Run`.
+Static AST, repository, manifest, link, and source-isolation checks are
+identified as such. No ticket artifact claims transfer, deployment, or release
+succeeded.
+The later isolated temporary execution is recorded separately in `evidence.md`
+and does not change the review or transfer outcome.
 
 ## External-source non-modification check
 
@@ -112,5 +115,6 @@ and rollback guidance. Do not transfer files or execute generated tests.
 - Status: ready_for_manual_transfer_guidance
 - Reviewer: Independent coding-agent review
 - Date: 2026-08-14
-- Residual risks: Feature validation has not been executed; approved timestamp,
-  missing-configuration, and closed-alert assumptions remain intentional.
+- Residual risks: The later isolated runner result awaits human confirmation;
+  approved timestamp, missing-configuration, and closed-alert assumptions remain
+  intentional.

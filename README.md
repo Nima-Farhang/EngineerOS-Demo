@@ -26,6 +26,12 @@ reviewable or safe. EngineerOS makes the reasoning and control points visible:
 
 This demonstrates engineering judgment, not autonomous production deployment.
 
+EngineerOS has two first-class modes:
+
+- **Question Mode:** read-only investigation of current project behavior.
+- **Ticket Mode:** staged understanding, design, ticket-local proposal,
+  generated validation, independent review, and handoff guidance.
+
 ## Repository layout
 
 ```text
@@ -45,6 +51,10 @@ EngineerOS-Demo/
 
 EngineerOS lives alongside project source so more workspaces and projects can be
 added without embedding authoritative code inside the workstation.
+
+The reusable convention is `EngineerOS/workspaces/<workspace>/` paired with
+`Sample-Projects/<project>/`. One complete workspace is enough to demonstrate
+that model without manufacturing a second project.
 
 ## Architecture
 
@@ -102,8 +112,12 @@ adds one set-based SQLite evaluator, and avoids a schema migration. Proposed
 files remain under the ticket rather than in `Sample-Projects/commerce-risk/`.
 Eleven feature tests were generated, an independent review found and resolved
 two documentation/coverage gaps, and manual transfer/rollback guidance was
-prepared. The proposed files are still `not_transferred`, and generated feature
-tests remain `Not Run`.
+prepared. The proposed files are still `not_transferred`. A later authorized
+isolated runner reported all 11 feature tests passing without modifying source;
+human confirmation remains pending.
+
+Here, `completed` means the EngineerOS workflow and handoff are complete. It
+does not mean transfer, destination execution, commit, deployment, or release.
 
 Start with:
 
@@ -128,7 +142,8 @@ python Sample-Projects/commerce-risk/run_pipeline.py \
 ```
 
 The current authoritative baseline creates two alerts in the temporary
-database. A human can execute its tests with:
+database. Tests require human-controlled local or approved CI execution and
+human result confirmation:
 
 ```bash
 cd Sample-Projects/commerce-risk
@@ -137,6 +152,16 @@ python -m unittest discover -s tests -v
 
 Generated DEMO-001 validation and evidence-capture instructions are in the
 [ticket test guide](EngineerOS/workspaces/commerce-risk/tickets/completed/DEMO-001/tests/README.md).
+The one-command isolated validator is:
+
+```bash
+python EngineerOS/scripts/validate_ticket_proposal.py DEMO-001
+```
+
+It assembles and tests a temporary proposal tree and verifies authoritative
+source hashes. The recorded 2026-08-14 run passed 4 baseline and 11 DEMO-001
+tests with authoritative source unchanged. This is isolated temporary validation
+only—not transfer or deployment—and still requires human confirmation.
 
 ## Quality gates
 
@@ -159,6 +184,22 @@ python EngineerOS/scripts/validate_repository.py
 The [GitHub Actions workflow](.github/workflows/quality-gates.yml) runs this gate
 and the authoritative sample-project tests for pull requests and `main` pushes.
 
+Automated checks detect concrete patterns; they cannot prove clean-room
+provenance or the absence of proprietary ideas. They supplement human review.
+
+## Clean-room provenance
+
+EngineerOS reproduces general engineering workflow ideas, not a real company's
+architecture. The commerce-risk sample was independently designed as a
+fictional local system. This repository does not contain copied workplace source
+code, renamed proprietary schemas, workplace documents, screenshots, production
+architecture diagrams, real business thresholds, real tickets, real environment
+configuration, customer/employee data, credentials, or lightly renamed
+proprietary material.
+
+That statement is a project boundary and human provenance claim; automated
+scanning alone cannot prove it.
+
 ## Design tradeoffs and limitations
 
 - SQLite and the Python standard library keep the demo inspectable and portable,
@@ -174,12 +215,20 @@ and the authoritative sample-project tests for pull requests and `main` pushes.
 
 ## Reviewer routes
 
+- **Two-minute overview:** read this page through the architecture diagram to
+  understand Platform, Workspace, Project Source, Ticket, and human control.
+- **Five-minute interactive demo:** run repository validation and the sample
+  pipeline, optionally followed by the isolated DEMO-001 validator.
 - **Five-minute recruiter route:** read this page, run the sample command, then
   scan the [portfolio walkthrough](EngineerOS/docs/portfolio-walkthrough.md#five-minute-recruiter-walkthrough).
 - **Fifteen-minute engineer route:** inspect source authority, DEMO-001 design,
   the proposal diff, validation matrix, review, and rollback guidance using the
   [engineer walkthrough](EngineerOS/docs/portfolio-walkthrough.md#fifteen-minute-engineer-walkthrough).
 
+Ready-to-paste Question Mode and new-ticket prompts are in the
+[usage guide](EngineerOS/docs/usage-guide.md).
+
 ## License
 
-See [LICENSE](EngineerOS/LICENSE).
+See [LICENSE](LICENSE). It covers the full repository, including `EngineerOS/`
+and `Sample-Projects/`.

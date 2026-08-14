@@ -8,9 +8,9 @@ production system.
 
 ## Intended sample architecture
 
-Synthetic order events flow into relational staging tables. Curated views
-standardise customer and order activity. Stored procedures evaluate configurable
-risk rules and write alert records for downstream review.
+Synthetic order and payment rows flow into relational tables. Curated views
+standardise customer activity. Set-based SQLite statements coordinated by
+Python evaluate configurable risk rules and write alert records for review.
 
 ## Naming
 

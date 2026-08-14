@@ -3,6 +3,13 @@
 All repository paths below are relative to the repository root. All business
 content is fictional and independently written.
 
+## Two-minute overview
+
+Read the root README mental model and architecture diagram. Platform defines how
+work is performed; Workspace supplies context; Project Source describes current
+behavior; Ticket contains a proposed change. Question Mode is read-only, while
+Ticket Mode adds staged human checkpoints.
+
 ## Five-minute recruiter walkthrough
 
 ### Minute 0–1: understand the proposition
@@ -37,8 +44,10 @@ in `evidence.md`, then into `design.md` and generated tests.
 ### Minute 4–5: see the control boundary
 
 Read `review.md` and `release-and-rollback.md`. The proposal was reviewed and
-guidance exists, but transfer remains `not_transferred` and feature tests remain
-`Not Run`. That distinction is the central portfolio claim.
+guidance exists and transfer remains `not_transferred`. A later isolated runner
+reported 11 feature tests passing without modifying source; human confirmation
+is pending. `completed` refers to workflow/handoff, not transfer, destination
+execution, commit, deployment, or release.
 
 ## Fifteen-minute engineer walkthrough
 
@@ -56,7 +65,8 @@ partial unique index for open-alert suppression.
 
 ### Minutes 3–5: authority and understanding
 
-Read `EngineerOS/platform/operating-rules.md`, then compare the DEMO-001
+Read `EngineerOS/platform/operating-rules.md` and
+`EngineerOS/prompts/question-mode.md`, then compare the DEMO-001
 requirement with `task-understanding.md`. Note the explicit Fact, Inference,
 Assumption, Unresolved question, and Conflict classifications.
 
@@ -75,8 +85,8 @@ in `Sample-Projects/commerce-risk/`. Cross-check the mappings and
 ### Minutes 10–12: validation honesty
 
 Read `tests/validation-matrix.md` and the eleven generated feature tests. Then
-open `evidence.md`: syntax and structural checks are executed evidence, while
-feature tests remain explicitly `Not Run`.
+open `evidence.md`: static checks, baseline execution, and isolated proposal
+execution are classified separately from transfer or deployment evidence.
 
 ### Minutes 12–14: independent review
 

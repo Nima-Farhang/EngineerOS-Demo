@@ -6,7 +6,8 @@
 - Review prerequisite: Met — `review.md` is
   `ready_for_manual_transfer_guidance`
 - Transfer status: `not_transferred` for all manifest entries
-- Generated test status: `Not Run`
+- Generated test status: Isolated temporary runner PASS (11 tests) recorded on
+  2026-08-14; human confirmation pending
 - Release/deployment status: Not performed
 
 This document provides human actions only. It does not authorize an agent to
@@ -120,6 +121,14 @@ All three `cmp` commands should exit 0 with no output. Only after saving human
 evidence should the manifest and changed-files transfer statuses be updated.
 
 ## Validation steps
+
+For a reproducible isolated validation before any transfer, a human may run:
+
+```bash
+python EngineerOS/scripts/validate_ticket_proposal.py DEMO-001
+```
+
+This is isolated temporary validation only. It does not change transfer state.
 
 Use an isolated temporary tree so the generated feature test is not silently
 added to authoritative project source:

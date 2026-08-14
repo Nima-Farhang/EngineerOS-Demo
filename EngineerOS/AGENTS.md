@@ -22,9 +22,13 @@ be fictional and independently written for this repository.
 
 ## Working rules
 
+- Use Question Mode for read-only investigation and Ticket Mode only when a
+  change or ticket workflow is explicitly requested.
 - Treat sample project code as authoritative for current implemented behaviour.
 - Distinguish facts, inferences, assumptions, unresolved questions, and conflicts.
 - Keep project source read-only unless a prompt explicitly authorises a change.
 - Put proposed project changes under the ticket's `implementation/proposed/` tree.
 - Do not claim generated tests were executed.
 - Stop at required human checkpoints.
+
+See `EngineerOS/WORKFLOW.md` for the canonical mode and lifecycle vocabulary.

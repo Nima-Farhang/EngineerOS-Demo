@@ -32,8 +32,10 @@ executed evidence.
 ## 3. Human control
 
 A human must confirm requirements, approve the design, decide whether proposed
-changes are applied, execute tests, confirm results, and approve source-control
-or release actions. An agent must not infer approval from silence.
+changes are applied, authorize test execution, confirm results, and approve
+source-control or release actions. Execution may occur through a human-run local
+command or an explicitly approved CI/isolated runner; automation does not
+confirm its own result. An agent must not infer approval from silence.
 
 ## 4. Safety and confidentiality
 
@@ -55,3 +57,9 @@ destination.
 
 Record generated tests as `Not Run` until a human executes them. Never state
 that a test passed or a release succeeded without recorded executed evidence.
+
+Isolated proposal validation may execute only in a temporary copy when a human
+explicitly chooses that action. Record its command, runner, context, and result
+as isolated temporary validation, then require human confirmation. It does not
+imply transfer, deployment, shared-environment validation, or production
+evidence.
