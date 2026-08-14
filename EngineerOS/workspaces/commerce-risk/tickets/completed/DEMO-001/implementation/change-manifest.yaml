@@ -1,0 +1,24 @@
+schema_version: "1.0"
+ticket_id: DEMO-001
+changes:
+  - source_path: Sample-Projects/commerce-risk/sql/seed.sql
+    proposed_path: EngineerOS/workspaces/commerce-risk/tickets/completed/DEMO-001/implementation/proposed/sql/seed.sql
+    change_type: modify
+    reason: Add the approved rule definition and four regional configurations.
+    intended_destination: Sample-Projects/commerce-risk/sql/seed.sql
+    review_status: ready_for_manual_transfer_guidance
+    transfer_status: not_transferred
+  - source_path: Sample-Projects/commerce-risk/risk_pipeline.py
+    proposed_path: EngineerOS/workspaces/commerce-risk/tickets/completed/DEMO-001/implementation/proposed/risk_pipeline.py
+    change_type: modify
+    reason: Add the approved deterministic repeat high-value order evaluator.
+    intended_destination: Sample-Projects/commerce-risk/risk_pipeline.py
+    review_status: ready_for_manual_transfer_guidance
+    transfer_status: not_transferred
+  - source_path: Sample-Projects/commerce-risk/README.md
+    proposed_path: EngineerOS/workspaces/commerce-risk/tickets/completed/DEMO-001/implementation/proposed/README.md
+    change_type: modify
+    reason: Document the new rule and its approved time and status semantics.
+    intended_destination: Sample-Projects/commerce-risk/README.md
+    review_status: ready_for_manual_transfer_guidance
+    transfer_status: not_transferred
