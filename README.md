@@ -1,11 +1,28 @@
 # EngineerOS Demo
 
-EngineerOS is a clean-room portfolio demonstration of evidence-led,
-human-controlled AI-assisted engineering. It shows how an agent can understand
-an unfamiliar project, trace a fictional requirement, design a small change,
-prepare ticket-local proposed files, generate validation, review the work, and
-write manual transfer and rollback guidance without silently editing the
-authoritative project.
+> **Repository description:** A runnable, clean-room demonstration of how to use
+> coding agents in a controlled engineering workflow—from codebase understanding
+> and requirements through review and safe handoff—without autonomous edits or
+> deployment.
+
+EngineerOS demonstrates the engineering operating model behind AI-assisted
+delivery: an agent investigates an unfamiliar project, traces a requirement,
+surfaces ambiguity for human decisions, designs the smallest compatible change,
+prepares ticket-local proposals and validation, and passes through independent
+review and rollback-ready handoff. The authoritative project source is never
+silently changed.
+
+## Recruiter route — two minutes
+
+1. **The outcome:** see how AI can accelerate engineering work while keeping
+   evidence, review, and release ownership with people.
+2. **The proof:** run the compact sample pipeline, then follow one completed
+   ticket from requirement to independently reviewed proposal and rollback plan.
+3. **Start here:** [five-minute recruiter walkthrough](EngineerOS/docs/portfolio-walkthrough.md#five-minute-recruiter-walkthrough).
+
+**What this signals:** platform thinking, practical AI engineering, software
+delivery controls, and the ability to turn ambiguous work into an auditable,
+testable change.
 
 All names, systems, data, rules, thresholds, regions, and tickets in this
 repository are synthetic and independently written. Nothing here represents an
